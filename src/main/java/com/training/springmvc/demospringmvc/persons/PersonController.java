@@ -18,7 +18,6 @@ public class PersonController {
 	@Autowired
 	private PersonJPARepository personRepository;
 
-
 	@GetMapping("/persons")
 	public String list(Model model) {
 		model.addAttribute("persons", personRepository.findAll());
@@ -45,7 +44,8 @@ public class PersonController {
 	}
 
 	@RequestMapping(method = RequestMethod.POST)
-	public String update(@Valid Person person, BindingResult bindingResult) {
+	public String update(@Valid Person person,
+			BindingResult bindingResult) {
 		if(bindingResult.hasErrors()) {
 			return "persons/edit";
 		}

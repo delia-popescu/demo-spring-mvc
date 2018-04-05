@@ -18,7 +18,8 @@ table, th, td {
 		</tr>
 		<tr th:each="person : ${persons}">
 			<td><a href="/persons/1>"
-				th:href="@{/persons/{path}(path=${person.id})}" th:text=${person.id}>Car</a></td>
+				th:href="@{/persons/{path}(path=${person.id})}" 
+				th:text=${person.id}>Id</a></td>
 			<td th:text="${person.firstName + ' ' + person.lastName}">Name</td>
 			<td>
 				<form th:object="${person}"

@@ -15,11 +15,14 @@ table, th, td {
 		<tr>
 			<th align="left">Id</th>
 			<th align="left">Name</th>
+			<th></th>
 		</tr>
 		<tr th:each="person : ${persons}">
-			<td><a href="/persons/1>"
-				th:href="@{/persons/{path}(path=${person.id})}" 
-				th:text=${person.id}>Id</a></td>
+			<td>
+				<a href="/persons/1>"
+				th:href="@{/persons/{path}(path=${person.id})}"
+				th:text=${person.id}>Id</a>
+			</td>
 			<td th:text="${person.firstName + ' ' + person.lastName}">Name</td>
 			<td>
 				<form th:object="${person}"
